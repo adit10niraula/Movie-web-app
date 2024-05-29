@@ -4,6 +4,7 @@ import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 
+
 import "./header.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
@@ -13,6 +14,7 @@ import logo from "../../assets/movix-logo.svg";
 
 
 const Header = () => {
+    
     const [show, setShow] = useState("top");
     const [lastScrollY, setLastScrollY] = useState(0);
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -99,7 +101,7 @@ const Header = () => {
        <header className={`header ${mobileMenu ? "mobileView": "" } ${show}`}>
         <ContentWrapper>
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" onClick={()=>navigate('/') }/>
           </div>
           <ul className="menuItems">
             <li className="menuItem" onClick={()=>navigationHandle('movie')}>Movies</li>
